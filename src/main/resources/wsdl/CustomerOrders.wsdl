@@ -31,7 +31,19 @@
 
 			<xsd:complexType name="getOrdersResponse">
 				<xsd:sequence>
-					<xsd:element name="order" type="tns:order" maxOccurs="unbounded" minOccurs="0" />
+					<xsd:element name="order" type="tns:order"
+						maxOccurs="unbounded" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="createOrdersRequest">
+				<xsd:sequence>
+					<xsd:element name="customerId" type="xsd:integer" />
+					<xsd:element name="order" type="tns:order" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="createOrdersResponse">
+				<xsd:sequence>
+					<xsd:element name="result" type="xsd:boolean"></xsd:element>
 				</xsd:sequence>
 			</xsd:complexType>
 		</xsd:schema>
