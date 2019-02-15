@@ -46,15 +46,32 @@
 					<xsd:element name="result" type="xsd:boolean"></xsd:element>
 				</xsd:sequence>
 			</xsd:complexType>
+			<xsd:element name="getOrdersRequest"
+				type="tns:getOrdersRequest" />
+			<xsd:element name="getOrdersResponse"
+				type="tns:getOrdersResponse" />
+			<xsd:element name="createOrdersRequest"
+				type="tns:createOrdersRequest" />
+			<xsd:element name="createOrdersResponse"
+				type="tns:createOrdersResponse" />
 		</xsd:schema>
 	</wsdl:types>
-	<wsdl:message name="NewOperationRequest">
-		<wsdl:part element="tns:NewOperation" name="parameters" />
+	<wsdl:message name="getOrdersRequest">
+		<wsdl:part element="tns:getOrdersRequest" name="parameters" />
 	</wsdl:message>
-	<wsdl:message name="NewOperationResponse">
-		<wsdl:part element="tns:NewOperationResponse"
+	<wsdl:message name="tns:getOrdersResponse"
+		name="parameters" />
+	<wsdl:part element="tns:getOrdersResponse" name="parameters" />
+</wsdl:message>
+	<wsdl:message name="createOrdersRequest">
+		<wsdl:part element="tns:createOrdersRequest"
 			name="parameters" />
 	</wsdl:message>
+	<wsdl:message name="tns:createOrdersResponse"
+		name="parameters" />
+	<wsdl:part element="tns:createOrdersResponse"
+		name="parameters" />
+</wsdl:message>
 	<wsdl:portType name="CustomerOrders">
 		<wsdl:operation name="NewOperation">
 			<wsdl:input message="tns:NewOperationRequest" />
