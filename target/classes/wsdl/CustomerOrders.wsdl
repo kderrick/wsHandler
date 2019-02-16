@@ -59,8 +59,7 @@
 	<wsdl:message name="getOrdersRequest">
 		<wsdl:part element="tns:getOrdersRequest" name="parameters" />
 	</wsdl:message>
-	<wsdl:message name="tns:getOrdersResponse"
-		name="parameters" />
+	<wsdl:message name="tns:getOrdersResponse"/>
 	<wsdl:part element="tns:getOrdersResponse" name="parameters" />
 </wsdl:message>
 	<wsdl:message name="createOrdersRequest">
@@ -74,15 +73,15 @@
 </wsdl:message>
 	<wsdl:portType name="CustomerOrdersPortType">
 		<wsdl:operation name="getOrders">
-			<wsdl:input message="tns:getOrdersRequest" />
-			<wsdl:output message="tns:getOrdersResponse" />
+			<wsdl:input message="tns:getOrdersRequest" name="getOrdersRequest"/>
+			<wsdl:output message="tns:getOrdersResponse" name="getOrdersResponse" />
 		</wsdl:operation>
 		<wsdl:operation name="createOrders">
-			<wsdl:input message="tns:createOrdersRequest" />
-			<wsdl:output message="tns:createOrdersResponse" />
+			<wsdl:input message="tns:createOrdersRequest" name="createOrdersRequest" />
+			<wsdl:output message="tns:createOrdersResponse" name="createOrdersResponse"/>
 		</wsdl:operation>
 	</wsdl:portType>
-	<wsdl:binding name="CustomerOrdersSOAP"
+	<wsdl:binding name="CustomerOrdersServiceSOAPBinding"
 		type="tns:CustomerOrdersPortType">
 		<soap:binding style="document"
 			transport="http://schemas.xmlsoap.org/soap/http" />
@@ -108,9 +107,10 @@
 		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:service name="CustomerOrders">
-		<wsdl:port binding="tns:CustomerOrdersSOAP"
-			name="CustomerOrdersSOAP">
-			<soap:address location="http://www.example.org/" />
+		<wsdl:port binding="tns:CustomerOrdersServiceSOAPBinding"
+			name="CustomerOrderPort">
+			<soap:address
+				location="http://localhost:8080/wsdlfirstws/services/customerOrdersService" />
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>
