@@ -72,23 +72,37 @@
 	<wsdl:part element="tns:createOrdersResponse"
 		name="parameters" />
 </wsdl:message>
-	<wsdl:portType name="CustomerOrders">
-		<wsdl:operation name="NewOperation">
-			<wsdl:input message="tns:NewOperationRequest" />
-			<wsdl:output message="tns:NewOperationResponse" />
+	<wsdl:portType name="CustomerOrdersPortType">
+		<wsdl:operation name="getOrders">
+			<wsdl:input message="tns:getOrdersRequest" />
+			<wsdl:output message="tns:getOrdersResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="createOrders">
+			<wsdl:input message="tns:createOrdersRequest" />
+			<wsdl:output message="tns:createOrdersResponse" />
 		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="CustomerOrdersSOAP"
-		type="tns:CustomerOrders">
+		type="tns:CustomerOrdersPortType">
 		<soap:binding style="document"
 			transport="http://schemas.xmlsoap.org/soap/http" />
-		<wsdl:operation name="NewOperation">
+		<wsdl:operation name="getOrders">
 			<soap:operation
 				soapAction="http://trainings.ws.kyle.com/NewOperation" />
-			<wsdl:input>
+			<wsdl:input name="getOrdersRequest">
 				<soap:body use="literal" />
 			</wsdl:input>
-			<wsdl:output>
+			<wsdl:output name="getOrdersResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createOrders">
+			<soap:operation
+				soapAction="http://trainings.ws.kyle.com/NewOperation" />
+			<wsdl:input name="createOrdersRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="createOrdersResponse">
 				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
