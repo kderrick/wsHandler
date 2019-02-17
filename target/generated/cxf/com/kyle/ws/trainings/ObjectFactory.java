@@ -1,7 +1,10 @@
 
 package com.kyle.ws.trainings;
 
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
+import javax.xml.namespace.QName;
 
 
 /**
@@ -21,6 +24,10 @@ import javax.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GetOrdersRequest_QNAME = new QName("http://trainings.ws.kyle.com", "getOrdersRequest");
+    private final static QName _GetOrdersResponse_QNAME = new QName("http://trainings.ws.kyle.com", "getOrdersResponse");
+    private final static QName _CreateOrdersRequest_QNAME = new QName("http://trainings.ws.kyle.com", "createOrdersRequest");
+    private final static QName _CreateOrdersResponse_QNAME = new QName("http://trainings.ws.kyle.com", "createOrdersResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.kyle.ws.trainings
@@ -30,19 +37,87 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NewOperation }
+     * Create an instance of {@link GetOrdersRequest }
      * 
      */
-    public NewOperation createNewOperation() {
-        return new NewOperation();
+    public GetOrdersRequest createGetOrdersRequest() {
+        return new GetOrdersRequest();
     }
 
     /**
-     * Create an instance of {@link NewOperationResponse }
+     * Create an instance of {@link GetOrdersResponse }
      * 
      */
-    public NewOperationResponse createNewOperationResponse() {
-        return new NewOperationResponse();
+    public GetOrdersResponse createGetOrdersResponse() {
+        return new GetOrdersResponse();
+    }
+
+    /**
+     * Create an instance of {@link CreateOrdersRequest }
+     * 
+     */
+    public CreateOrdersRequest createCreateOrdersRequest() {
+        return new CreateOrdersRequest();
+    }
+
+    /**
+     * Create an instance of {@link CreateOrdersResponse }
+     * 
+     */
+    public CreateOrdersResponse createCreateOrdersResponse() {
+        return new CreateOrdersResponse();
+    }
+
+    /**
+     * Create an instance of {@link Product }
+     * 
+     */
+    public Product createProduct() {
+        return new Product();
+    }
+
+    /**
+     * Create an instance of {@link Order }
+     * 
+     */
+    public Order createOrder() {
+        return new Order();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetOrdersRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://trainings.ws.kyle.com", name = "getOrdersRequest")
+    public JAXBElement<GetOrdersRequest> createGetOrdersRequest(GetOrdersRequest value) {
+        return new JAXBElement<GetOrdersRequest>(_GetOrdersRequest_QNAME, GetOrdersRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetOrdersResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://trainings.ws.kyle.com", name = "getOrdersResponse")
+    public JAXBElement<GetOrdersResponse> createGetOrdersResponse(GetOrdersResponse value) {
+        return new JAXBElement<GetOrdersResponse>(_GetOrdersResponse_QNAME, GetOrdersResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateOrdersRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://trainings.ws.kyle.com", name = "createOrdersRequest")
+    public JAXBElement<CreateOrdersRequest> createCreateOrdersRequest(CreateOrdersRequest value) {
+        return new JAXBElement<CreateOrdersRequest>(_CreateOrdersRequest_QNAME, CreateOrdersRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateOrdersResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://trainings.ws.kyle.com", name = "createOrdersResponse")
+    public JAXBElement<CreateOrdersResponse> createCreateOrdersResponse(CreateOrdersResponse value) {
+        return new JAXBElement<CreateOrdersResponse>(_CreateOrdersResponse_QNAME, CreateOrdersResponse.class, null, value);
     }
 
 }

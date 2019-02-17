@@ -59,26 +59,29 @@
 	<wsdl:message name="getOrdersRequest">
 		<wsdl:part element="tns:getOrdersRequest" name="parameters" />
 	</wsdl:message>
-	<wsdl:message name="tns:getOrdersResponse"/>
-	<wsdl:part element="tns:getOrdersResponse" name="parameters" />
-</wsdl:message>
+	<wsdl:message name="getOrdersResponse">
+		<wsdl:part element="tns:getOrdersResponse" name="parameters" />
+	</wsdl:message>
 	<wsdl:message name="createOrdersRequest">
 		<wsdl:part element="tns:createOrdersRequest"
 			name="parameters" />
 	</wsdl:message>
-	<wsdl:message name="tns:createOrdersResponse"
-		name="parameters" />
+	<wsdl:message name="createOrdersResponse">
 	<wsdl:part element="tns:createOrdersResponse"
 		name="parameters" />
 </wsdl:message>
 	<wsdl:portType name="CustomerOrdersPortType">
 		<wsdl:operation name="getOrders">
-			<wsdl:input message="tns:getOrdersRequest" name="getOrdersRequest"/>
-			<wsdl:output message="tns:getOrdersResponse" name="getOrdersResponse" />
+			<wsdl:input message="tns:getOrdersRequest"
+				name="getOrdersRequest" />
+			<wsdl:output message="tns:getOrdersResponse"
+				name="getOrdersResponse" />
 		</wsdl:operation>
 		<wsdl:operation name="createOrders">
-			<wsdl:input message="tns:createOrdersRequest" name="createOrdersRequest" />
-			<wsdl:output message="tns:createOrdersResponse" name="createOrdersResponse"/>
+			<wsdl:input message="tns:createOrdersRequest"
+				name="createOrdersRequest" />
+			<wsdl:output message="tns:createOrdersResponse"
+				name="createOrdersResponse" />
 		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="CustomerOrdersServiceSOAPBinding"
